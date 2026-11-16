@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WORKSPACE</title>
+<style>
+:root{color-scheme:dark;--bg:#15171A;--panel:#202328;--sec:#282C32;--bd:#343940;--tx:#F0F0F0;--tx2:#969DA7;--ac:#B8BEC7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;height:100%;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}
+.app{display:flex;min-height:100%}
+aside{width:232px;background:var(--panel);border-right:1px solid var(--bd);padding:18px 12px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh;flex-shrink:0}
+.brand{font-weight:700;letter-spacing:.14em;font-size:13px;padding:6px 10px 18px;display:flex;align-items:center;gap:8px}
+.brand i{width:8px;height:8px;border-radius:2px;background:var(--ac)}
+nav a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;color:var(--tx2);text-decoration:none;transition:.15s}
+nav a:hover{background:var(--sec);color:var(--tx)}
+nav a.on{background:var(--sec);color:var(--tx);box-shadow:inset 2px 0 var(--ac)}
+svg.ic{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+main{flex:1;min-width:0;padding:28px;max-width:1100px;animation:in .25s}
+@keyframes in{from{opacity:0;transform:translateY(4px)}}
+h1{font-size:22px;margin:0 0 4px;font-weight:600}
+.sub{color:var(--tx2);margin-bottom:22px;text-transform:capitalize}
+.grid{display:grid;gap:12px}
+.stats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:12px}
+.card{background:var(--panel);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.card h3{margin:0 0 12px;font-size:13px;font-weight:600;color:var(--tx2);display:flex;justify-content:space-between;align-items:center}
+.big{font-size:26px;font-weight:600}
+.lbl{color:var(--tx2);font-size:12px;margin-top:2px}
+.two{grid-template-columns:2fr 1fr}
+.bar{height:6px;background:var(--sec);border-radius:4px;overflow:hidden}
+.bar b{display:block;height:100%;background:var(--ac);border-radius:4px;transition:width .4s}
+.goal{margin-bottom:14px}
+.goal div.r{display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px}
+.empty{color:var(--tx2);text-align:center;padding:26px 10px;border:1px dashed var(--bd);border-radius:8px;font-size:13px}
+.empty svg{width:22px;height:22px;display:block;margin:0 auto 8px;opacity:.7}
+button,input{font:inherit;color:var(--tx)}
+.btn{background:var(--sec);border:1px solid var(--bd);border-radius:8px;padding:7px 12px;cursor:pointer;transition:.15s}
+.btn:hover{border-color:var(--ac)}
+.btn.p{background:var(--ac);color:#15171A;border-color:var(--ac);font-weight:600}
+.gform{display:grid;gap:10px}
+.gform label{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--tx2)}
+input[type=number]{width:90px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 8px}
+.chart{display:flex;align-items:flex-end;gap:10px;height:170px;padding-top:8px}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.col span.b{width:100%;max-width:34px;background:var(--ac);border-radius:4px 4px 0 0;min-height:2px;transition:height .4s}
+.col span.b.z{background:var(--sec)}
+.col small{color:var(--tx2);font-size:11px}
+.col em{font-style:normal;font-size:11px;color:var(--tx2)}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--sec);border:1px solid var(--bd);padding:10px 16px;border-radius:8px;opacity:0;pointer-events:none;transition:.2s}
+.toast.on{opacity:1}
+.ov{position:fixed;inset:0;background:#000a;display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}.md{width:100%;max-width:420px;max-height:90vh;overflow:auto;display:grid;gap:10px}.f{display:grid;gap:4px;color:var(--tx2);font-size:12px}.f input,.f select,.f textarea,select,textarea.bk{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px;color:var(--tx);font:inherit;width:100%}select{width:auto}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}.item{padding:10px 0;border-top:1px solid var(--bd);display:flex;justify-content:space-between;gap:10px;align-items:center}.tag{font-size:11px;background:var(--sec);border:1px solid var(--bd);border-radius:6px;padding:2px 7px;color:var(--tx2)}.kb{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.on.btn{border-color:var(--ac)}.late{color:#d38b8b}.mini{padding:4px 8px;font-size:12px}textarea.bk{height:150px;font-size:12px}.ring{display:block;margin:6px auto}.tm{font-size:44px;font-weight:600;text-align:center;margin-top:-132px;height:132px;line-height:132px}@media(max-width:800px){.kb{grid-template-columns:1fr}}
+:root[data-theme=light]{color-scheme:light;--bg:#F4F5F7;--panel:#FFFFFF;--sec:#ECEEF1;--bd:#D5D9DF;--tx:#15171A;--tx2:#5E6670;--ac:#4A515C}[data-theme=light] .btn.p{color:#fff}
+.top{display:none}
+@media(max-width:800px){
+ aside{position:fixed;z-index:5;left:0;top:0;transform:translateX(-100%);transition:.2s;padding-top:calc(18px + env(safe-area-inset-top,0px))}
+ aside.open{transform:none}
+ .top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+ main{padding:16px}.two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside id="side"><div class="brand"><i></i>WORKSPACE</div><nav id="nav"></nav></aside>
+<main id="main"></main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const P={dash:"M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z",proj:"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9l-.8-1.2A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z",task:"M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11",focus:"M10 2h4M12 14l3-3M12 22a8 8 0 1 0 0-16 8 8 0 0 0 0 16z",goal:"M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",lib:"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20",zap:"M13 2L3 14h9l-1 8 10-12h-9z",cfg:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z",menu:"M4 6h16M4 12h16M4 18h16"};
+const ic=k=>`<svg class="ic" viewBox="0 0 24 24"><path d="${P[k]}"/></svg>`;
+const NAV=[["dash","Dashboard",1],["proj","Projetos",2],["task","Tarefas",2],["focus","Focus Room",3],["goal","Metas e hábitos",4],["lib","Biblioteca",4],["zap","Anti-procrastinação",4],["cfg","Configurações",5]];
+const STORES=["projects","tasks","habits","sessions","notes"];
+let db=null;
+function openDB(){return new Promise(res=>{try{const r=indexedDB.open("workspace",1);r.onupgradeneeded=()=>STORES.forEach(s=>r.result.createObjectStore(s,{keyPath:"id"}));r.onsuccess=()=>{db=r.result;res()};r.onerror=()=>res()}catch(e){res()}})}
+function all(s){return new Promise(res=>{if(!db)return res([]);try{const q=db.transaction(s).objectStore(s).getAll();q.onsuccess=()=>res(q.result||[]);q.onerror=()=>res([])}catch(e){res([])}})}
+const DG={minutes:300,sessions:10,deliveries:2};
+function getGoals(){try{return{...DG,...JSON.parse(localStorage.getItem("ws_goals")||"{}")}}catch(e){return{...DG}}}
+function setGoals(g){try{localStorage.setItem("ws_goals",JSON.stringify(g));return true}catch(e){return false}}
+function weekStart(){const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d}
+function toast(t){const e=document.getElementById("toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),1800)}
+function nav(){const h=location.hash.slice(1)||"dash";document.getElementById("nav").innerHTML=NAV.map(([k,n])=>`<a href="#${k}" class="${h===k?"on":""}">${ic(k)}${n}</a>`).join("");return h}
+const empty=(k,t)=>`<div class="empty">${ic(k)}${t}</div>`;
+async function dashboard(){
+ const [pr,tk,se]=await Promise.all([all("projects"),all("tasks"),all("sessions")]);
+ const g=getGoals(),ws=weekStart(),wt=ws.getTime(),we=wt+7*864e5;
+ const wsess=se.filter(s=>s.startedAt>=wt&&s.startedAt<we);
+ const mins=Math.round(wsess.reduce((a,s)=>a+(s.minutes||0),0));
+ const nsess=wsess.filter(s=>s.completed).length;
+ const active=pr.filter(p=>p.status==="em_andamento"&&!p.archived).length;
+ const pend=tk.filter(t=>t.status!=="concluida");
+ const deliv=pr.filter(p=>p.status==="concluido"&&p.completedAt>=wt&&p.completedAt<we).length;
+ const days=["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"],per=days.map(()=>0);
+ wsess.forEach(s=>per[(new Date(s.startedAt).getDay()+6)%7]+=s.minutes||0);
+ const mx=Math.max(...per,1);
+ const pc=(v,m)=>Math.min(100,Math.round(v/m*100));
+ const prog=Math.round((pc(mins,g.minutes)+pc(nsess,g.sessions)+pc(deliv,g.deliveries))/3);
+ const h=new Date().getHours(),sd=h<12?"Bom dia":h<18?"Boa tarde":"Boa noite";
+ const date=new Date().toLocaleDateString("pt-BR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+ const gl=(n,v,m,u)=>`<div class="goal"><div class="r"><span>${n}</span><span style="color:var(--tx2)">${v}/${m} ${u}</span></div><div class="bar"><b style="width:${pc(v,m)}%"></b></div></div>`;
+ const next=pend.filter(t=>t.due).sort((a,b)=>a.due>b.due?1:-1).concat(pend.filter(t=>!t.due)).slice(0,5);
+ document.getElementById("main").innerHTML=`
+ <div class="top"><button class="btn" id="mb" aria-label="Menu">${ic("menu")}</button></div>
+ <h1>${sd}</h1><div class="sub">${date}</div>
+ <div class="grid stats">
+  <div class="card"><div class="big">${mins}</div><div class="lbl">Minutos trabalhados</div></div>
+  <div class="card"><div class="big">${nsess}</div><div class="lbl">Sessões de foco</div></div>
+  <div class="card"><div class="big">${active}</div><div class="lbl">Projetos ativos</div></div>
+  <div class="card"><div class="big">${pend.length}</div><div class="lbl">Tarefas pendentes</div></div>
+ </div>
+ <div class="grid two" style="margin-bottom:12px">
+  <div class="card"><h3>Produtividade da semana <span>${mins} min</span></h3>
+   <div class="chart">${per.map((v,i)=>`<div class="col"><em>${v||""}</em><span class="b ${v?"":"z"}" style="height:${Math.round(v/mx*100)}%"></span><small>${days[i]}</small></div>`).join("")}</div>
+   ${mins?"":`<div class="lbl" style="margin-top:10px">As barras aparecem quando você registrar sessões de foco (Fase 3).</div>`}</div>
+  <div class="card"><h3>Progresso da semana <span>${prog}%</span></h3><div class="bar" style="height:8px;margin-bottom:18px"><b style="width:${prog}%"></b></div>
+   ${gl("Minutos",mins,g.minutes,"min")}${gl("Sessões",nsess,g.sessions,"")}${gl("Entregas",deliv,g.deliveries,"")}</div>
+ </div>
+ <div class="grid two">
+  <div class="card"><h3>Próximas tarefas</h3>${next.length?next.map(t=>`<div style="padding:8px 0;border-top:1px solid var(--bd)">${String(t.title||"").replace(/</g,"&lt;")}<span class="lbl" style="float:right">${t.due||""}</span></div>`).join(""):empty("task","Nenhuma tarefa pendente. O gerenciador de tarefas chega na Fase 2.")}</div>
+  <div class="card"><h3>Metas semanais</h3><form class="gform" id="gf">
+   <label>Minutos por semana<input type="number" min="0" name="minutes" value="${g.minutes}"></label>
+   <label>Sessões de foco<input type="number" min="0" name="sessions" value="${g.sessions}"></label>
+   <label>Entregas concluídas<input type="number" min="0" name="deliveries" value="${g.deliveries}"></label>
+   <button class="btn p" type="submit">Salvar metas</button></form></div>
+ </div>`;
+ document.getElementById("gf").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),n={};for(const k of Object.keys(DG)){const v=parseInt(f.get(k),10);n[k]=v>=0?v:DG[k]}toast(setGoals(n)?"Metas salvas":"Não foi possível salvar");dashboard()};
+}
+function stub(k){const [,n,ph]=NAV.find(x=>x[0]===k);
+ document.getElementById("main").innerHTML=`<div class="top"><button class="btn" id="mb" aria-label="Menu">${ic("menu")}</button></div><h1>${n}</h1><div class="sub">Em desenvolvimento</div>${empty(k,`Esta seção será construída na Fase ${ph}.`)}`}
+const V=document.getElementById("main"),TOP=`<div class="top"><button class="btn" id="mb" aria-label="Menu">${ic("menu")}</button></div>`;
+const IO=(s,f)=>new Promise(r=>{try{const t=db.transaction(s,"readwrite");f(t.objectStore(s));t.oncomplete=()=>r(1);t.onerror=()=>r(0)}catch(e){r(0)}});
+const put=(s,o)=>IO(s,x=>x.put(o)),del=(s,id)=>IO(s,x=>x.delete(id)),clr=s=>IO(s,x=>x.clear());
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ld=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const ST={nao_iniciado:"Não iniciado",em_andamento:"Em andamento",pausado:"Pausado",concluido:"Concluído"},PR={alta:"Alta",media:"Média",baixa:"Baixa"},TS={a_fazer:"A fazer",fazendo:"Em andamento",concluida:"Concluída"};
+const opts=o=>Object.entries(o),A={},F={};
+V.onclick=e=>{if(e.target.closest("#mb"))document.getElementById("side").classList.toggle("open");const b=e.target.closest("[data-a]");if(b&&A[b.dataset.a])A[b.dataset.a](b.dataset.id,b)};
+V.onchange=e=>{const f=e.target.dataset.f;if(f&&F[f])F[f](e.target.value)};
+function ask(m,fn){const o=document.createElement("div");o.className="ov";o.innerHTML=`<div class="card md"><div>${esc(m)}</div><div class="row"><button class="btn" id="n">Cancelar</button><button class="btn p" id="y">Confirmar</button></div></div>`;document.body.append(o);o.querySelector("#n").onclick=()=>o.remove();o.querySelector("#y").onclick=async()=>{await fn();o.remove()}}
+function modal(t,fs,v,ok){const o=document.createElement("div");o.className="ov";o.innerHTML=`<form class="card md"><h3>${t}</h3>${fs.map(([n,l,ty,op])=>`<label class="f">${l}${ty==="select"?`<select name="${n}">${op.map(([k,x])=>`<option value="${k}" ${v[n]===k?"selected":""}>${esc(x)}</option>`).join("")}</select>`:ty==="area"?`<textarea name="${n}" rows="3">${esc(v[n])}</textarea>`:`<input name="${n}" type="${ty}" value="${esc(v[n])}" ${n==="title"||n==="name"?"required":""}>`}</label>`).join("")}<div class="row"><button type="button" class="btn" id="cx">Cancelar</button><button class="btn p">Salvar</button></div></form>`;document.body.append(o);o.querySelector("#cx").onclick=()=>o.remove();o.querySelector("form").onsubmit=async e=>{e.preventDefault();await ok(Object.fromEntries(new FormData(e.target)));o.remove()}}
+const sel=(f,o,v,a)=>`<select data-f="${f}"><option value="">${a}</option>${opts(o).map(([k,x])=>`<option value="${k}" ${v===k?"selected":""}>${x}</option>`).join("")}</select>`;
+/* PROJETOS */
+let pf={s:"",p:"",ar:0};
+async function projects(){
+ const [pr,tk]=await Promise.all([all("projects"),all("tasks")]);
+ const l=pr.filter(p=>!!p.archived===!!pf.ar&&(!pf.s||p.status===pf.s)&&(!pf.p||p.prio===pf.p));
+ V.innerHTML=TOP+`<h1>Projetos</h1><div class="sub">${pf.ar?"Arquivados":"Ativos"}</div><div class="row" style="margin-bottom:14px"><div class="row">${sel("ps",ST,pf.s,"Todos os status")}${sel("pp",PR,pf.p,"Todas as prioridades")}<button class="btn" data-a="parq">${pf.ar?"Ver ativos":"Ver arquivados"}</button></div><button class="btn p" data-a="pnew">Novo projeto</button></div>`+(l.length?`<div class="grid">${l.map(p=>{const t=tk.filter(x=>x.projectId===p.id),d=t.filter(x=>x.status==="concluida").length,pc=t.length?Math.round(d/t.length*100):p.status==="concluido"?100:0;return `<div class="card"><div class="row"><b>${esc(p.name)}</b><span><span class="tag">${ST[p.status]}</span> <span class="tag">${PR[p.prio]}</span>${p.category?` <span class="tag">${esc(p.category)}</span>`:""}</span></div><div class="lbl" style="margin:6px 0 10px">${esc(p.desc)||"Sem descrição"}${p.due?` · Prazo ${p.due}`:""} · Criado em ${new Date(p.created).toLocaleDateString("pt-BR")}</div><div class="bar"><b style="width:${pc}%"></b></div><div class="row" style="margin-top:10px"><span class="lbl">${d}/${t.length} tarefas · ${pc}%</span><span><button class='btn mini' data-a='pdet' data-id='${p.id}'>Detalhes</button> <button class="btn mini" data-a="pedit" data-id="${p.id}">Editar</button> <button class="btn mini" data-a="par" data-id="${p.id}">${p.archived?"Desarquivar":"Arquivar"}</button> <button class="btn mini" data-a="pdel" data-id="${p.id}">Excluir</button></span></div></div>`}).join("")}</div>`:empty("proj",pr.length?"Nenhum projeto com esses filtros.":"Nenhum projeto ainda. Crie o primeiro."));
+}
+F.ps=v=>{pf.s=v;projects()};F.pp=v=>{pf.p=v;projects()};
+A.parq=()=>{pf.ar=pf.ar?0:1;projects()};
+const pform=p=>modal("Projeto",[["name","Nome","text"],["desc","Descrição","area"],["category","Categoria","text"],["prio","Prioridade","select",opts(PR)],["status","Status","select",opts(ST)],["due","Prazo (opcional)","date"]],{prio:"media",status:"nao_iniciado",...p},async d=>{const o={...p,...d,id:p.id||uid(),created:p.created||Date.now()};o.completedAt=d.status==="concluido"?(p.completedAt||Date.now()):null;await put("projects",o);toast("Projeto salvo");projects()});
+A.pnew=()=>pform({});A.pedit=async id=>pform((await all("projects")).find(x=>x.id===id)||{});
+A.par=async id=>{const p=(await all("projects")).find(x=>x.id===id);p.archived=!p.archived;await put("projects",p);toast(p.archived?"Projeto arquivado":"Projeto restaurado");projects()};
+A.pdel=id=>ask("Excluir o projeto e todas as suas tarefas? Não dá para desfazer.",async()=>{for(const t of (await all("tasks")).filter(t=>t.projectId===id))await del("tasks",t.id);await del("projects",id);toast("Projeto excluído");projects()});
+/* TAREFAS */
+let tf={v:"list",o:"due"};
+async function tasks(){
+ const [tk,pr]=await Promise.all([all("tasks"),all("projects")]),pn=Object.fromEntries(pr.map(p=>[p.id,p.name])),td=ld(),dn=t=>t.status==="concluida",po={alta:0,media:1,baixa:2};
+ let l=tk.slice();if(tf.v==="today")l=l.filter(t=>t.due===td&&!dn(t));if(tf.v==="late")l=l.filter(t=>t.due&&t.due<td&&!dn(t));
+ l.sort((a,b)=>tf.o==="prio"?po[a.prio]-po[b.prio]:tf.o==="new"?b.created-a.created:(a.due||"9")>(b.due||"9")?1:-1);
+ const kb=tf.v==="kb",row=t=>`<div class="item"><div><b style="${dn(t)?"text-decoration:line-through;color:var(--tx2)":""}">${esc(t.title)}</b><div class="lbl" style="margin-top:4px">${pn[t.projectId]?`<span class="tag">${esc(pn[t.projectId])}</span> `:""}<span class="tag">${PR[t.prio]}</span>${t.due?` <span class="${t.due<td&&!dn(t)?"late":""}">${t.due}</span>`:""}${t.est?` · ${t.spent||0}/${t.est} min`:t.spent?` · ${t.spent} min`:""}</div></div><span style="white-space:nowrap">${kb?`<button class="btn mini" data-a="tmv" data-id="${t.id}" data-d="-1">◀</button> <button class="btn mini" data-a="tmv" data-id="${t.id}" data-d="1">▶</button> `:`<button class="btn mini" data-a="tchk" data-id="${t.id}">${dn(t)?"↺":"✓"}</button> `}<button class="btn mini" data-a="tedit" data-id="${t.id}">Editar</button> <button class="btn mini" data-a="tdel" data-id="${t.id}">×</button></span></div>`;
+ const tabs=[["list","Lista"],["kb","Kanban"],["today","Hoje"],["late","Atrasadas"]];
+ V.innerHTML=TOP+`<h1>Tarefas</h1><div class="sub">${tk.filter(t=>!dn(t)).length} pendentes</div><div class="row" style="margin-bottom:14px"><div class="row">${tabs.map(([k,n])=>`<button class="btn mini ${tf.v===k?"on":""}" data-a="tv" data-id="${k}">${n}</button>`).join("")}<select data-f="to"><option value="due" ${tf.o==="due"?"selected":""}>Ordenar: prazo</option><option value="prio" ${tf.o==="prio"?"selected":""}>Ordenar: prioridade</option><option value="new" ${tf.o==="new"?"selected":""}>Ordenar: recentes</option></select></div><button class="btn p" data-a="tnew">Nova tarefa</button></div>`+(kb?`<div class="kb">${opts(TS).map(([k,n])=>`<div class="card"><h3>${n}</h3>${l.filter(t=>t.status===k).map(row).join("")||'<div class="lbl">Vazio</div>'}</div>`).join("")}</div>`:l.length?`<div class="card" style="padding-top:6px">${l.map(row).join("")}</div>`:empty("task",tk.length?"Nenhuma tarefa nesta visão.":"Nenhuma tarefa ainda. Crie a primeira."));
+}
+F.to=v=>{tf.o=v;tasks()};A.tv=id=>{tf.v=id;tasks()};
+const tform=(t,pr)=>modal("Tarefa",[["title","Título","text"],["desc","Descrição","area"],["projectId","Projeto","select",[["","Sem projeto"],...pr.filter(p=>!p.archived).map(p=>[p.id,p.name])]],["prio","Prioridade","select",opts(PR)],["due","Prazo","date"],["status","Status","select",opts(TS)],["est","Estimativa (min)","number"]],{prio:"media",status:"a_fazer",...t},async d=>{await put("tasks",{...t,...d,id:t.id||uid(),created:t.created||Date.now(),est:+d.est||0,spent:t.spent||0});toast("Tarefa salva");tasks()});
+A.tnew=async()=>tform({},await all("projects"));A.tedit=async id=>tform((await all("tasks")).find(x=>x.id===id)||{},await all("projects"));
+A.tchk=async id=>{const t=(await all("tasks")).find(x=>x.id===id);t.status=t.status==="concluida"?"a_fazer":"concluida";await put("tasks",t);tasks()};
+A.tmv=async(id,b)=>{const k=Object.keys(TS),t=(await all("tasks")).find(x=>x.id===id);t.status=k[Math.max(0,Math.min(2,k.indexOf(t.status)+ +b.dataset.d))];await put("tasks",t);tasks()};
+A.tdel=id=>ask("Excluir esta tarefa?",async()=>{await del("tasks",id);toast("Tarefa excluída");tasks()});
+/* FOCUS ROOM (baseado em timestamps) */
+const T={ph:"focus",mode:"pomo",left:1500,end:0,run:0,acc:0,t0:0,start:0,link:"",c:[40,8]},MODES={pomo:[25,5,"Pomodoro 25/5"],long:[50,10,"Longa 50/10"],short:[15,3,"Curta 15/3"],custom:[0,0,"Personalizado"]};
+const mm=()=>T.mode==="custom"?T.c:MODES[T.mode],tot=()=>mm()[T.ph==="focus"?0:1]*60,tl=()=>T.run?Math.max(0,Math.round((T.end-Date.now())/1000)):T.left,wk=()=>T.acc+(T.run&&T.ph==="focus"?Date.now()-T.t0:0),fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+const setPh=p=>{T.ph=p;T.left=tot();T.run=0;T.acc=0;T.start=0};
+async function save(full){const m=wk()/60000;if(T.ph!=="focus"||m<.5)return;const [k,id]=T.link.split(":"),s={id:uid(),startedAt:T.start||Date.now(),minutes:Math.round(m*10)/10,completed:full,mode:T.mode,projectId:k==="p"?id:null,taskId:k==="t"?id:null};if(k==="t"){const t=(await all("tasks")).find(x=>x.id===id);if(t){s.projectId=t.projectId||null;t.spent=Math.round(((t.spent||0)+m)*10)/10;await put("tasks",t)}}await put("sessions",s)}
+async function fin(){await save(true);{const m=T.ph==="focus"?"Foco concluído!":"Descanso encerrado";toast(m);notify(m)}setPh(T.ph==="focus"?"break":"focus");if(location.hash==="#focus")focus()}
+function upd(){const e=document.getElementById("tm");if(!e)return;const s=tl(),t=tot()||1;e.textContent=fmt(s);document.getElementById("rg").style.strokeDashoffset=628*(1-s/t)}
+setInterval(()=>{if(T.run&&tl()<=0&&!T.b){T.b=1;fin().then(()=>T.b=0)}else if(location.hash==="#focus")upd()},250);
+document.addEventListener("visibilitychange",upd);
+async function focus(){
+ const [se,tk,pr]=await Promise.all([all("sessions"),all("tasks"),all("projects")]),nm={};pr.forEach(p=>nm["p:"+p.id]=p.name);tk.forEach(t=>nm["t:"+t.id]=t.title);
+ const td=new Date().setHours(0,0,0,0),hoje=se.filter(s=>s.completed&&s.startedAt>=td).length,started=T.run||T.left<tot()||wk()>0;
+ V.innerHTML=TOP+`<h1>Focus Room</h1><div class="sub">${T.ph==="focus"?"Foco":"Descanso"} · ${hoje} sessões concluídas hoje</div><div class="card"><div class="row" style="justify-content:center;margin-bottom:8px">${opts(MODES).map(([k,v])=>`<button class="btn mini ${T.mode===k?"on":""}" data-a="fm" data-id="${k}">${v[2]}</button>`).join("")}</div>${T.mode==="custom"?`<div class="row" style="justify-content:center;margin-bottom:8px"><input type="number" min="1" data-f="fc0" value="${T.c[0]}"> min foco <input type="number" min="1" data-f="fc1" value="${T.c[1]}"> min descanso</div>`:""}<svg class="ring" width="240" height="240" viewBox="0 0 240 240"><circle cx="120" cy="120" r="100" fill="none" stroke="var(--sec)" stroke-width="8"/><circle id="rg" cx="120" cy="120" r="100" fill="none" stroke="var(--ac)" stroke-width="8" stroke-linecap="round" stroke-dasharray="628" transform="rotate(-90 120 120)"/></svg><div class="tm" id="tm"></div><div class="row" style="justify-content:center;margin:14px 0">${T.run?`<button class="btn p" data-a="fp">Pausar</button>`:`<button class="btn p" data-a="fs">${started?"Retomar":"Iniciar"}</button>`}<button class="btn" data-a="fr">Reiniciar</button><button class="btn" data-a="fk">Pular</button></div><label class="f">Associar a<select data-f="fl"><option value="">Sem vínculo</option>${pr.filter(p=>!p.archived).map(p=>`<option value="p:${p.id}" ${T.link==="p:"+p.id?"selected":""}>Projeto: ${esc(p.name)}</option>`).join("")}${tk.filter(t=>t.status!=="concluida").map(t=>`<option value="t:${t.id}" ${T.link==="t:"+t.id?"selected":""}>Tarefa: ${esc(t.title)}</option>`).join("")}</select></label></div><div class="card" style="margin-top:12px"><h3>Histórico</h3>${se.length?se.sort((a,b)=>b.startedAt-a.startedAt).slice(0,10).map(s=>`<div class="item"><span>${new Date(s.startedAt).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})} · ${esc(nm[s.taskId?"t:"+s.taskId:"p:"+s.projectId]||"Sem vínculo")}</span><span class="lbl">${s.minutes} min${s.completed?"":" (parcial)"}</span></div>`).join(""):empty("focus","Nenhuma sessão registrada ainda.")}</div>`;
+ upd();
+}
+A.fs=()=>{T.run=1;T.end=Date.now()+T.left*1000;T.t0=Date.now();if(!T.start)T.start=Date.now();focus()};
+A.fp=()=>{const w=wk();T.left=tl();T.run=0;T.acc=w;focus()};
+A.fr=()=>{setPh(T.ph);focus()};
+A.fk=async()=>{await save(false);setPh(T.ph==="focus"?"break":"focus");focus()};
+A.fm=id=>{if(T.run)return toast("Pause antes de trocar o modo");T.mode=id;setPh("focus");focus()};
+F.fl=v=>{T.link=v};F.fc0=v=>{T.c[0]=Math.max(1,+v||40);if(!T.run)setPh(T.ph);focus()};F.fc1=v=>{T.c[1]=Math.max(1,+v||8);if(!T.run)setPh(T.ph);focus()};
+/* CONFIGURAÇÕES */
+const gp=()=>{try{return{theme:'dark',notif:false,pomo:[25,5],...JSON.parse(localStorage.getItem('ws_prefs')||'{}')}}catch(e){return{theme:'dark',notif:false,pomo:[25,5]}}},sp=p=>{try{localStorage.setItem('ws_prefs',JSON.stringify(p))}catch(e){}};
+function applyP(){const p=gp();document.documentElement.dataset.theme=p.theme;MODES.pomo[0]=p.pomo[0];MODES.pomo[1]=p.pomo[1];MODES.pomo[2]=`Pomodoro ${p.pomo[0]}/${p.pomo[1]}`}
+function notify(m){try{if(gp().notif&&Notification.permission==='granted')new Notification('WORKSPACE',{body:m})}catch(e){}}
+F.ct=v=>{const p=gp();p.theme=v;sp(p);applyP()};
+F.cp0=v=>{const p=gp();p.pomo[0]=Math.max(1,parseInt(v)||25);sp(p);applyP();if(!T.run&&T.mode==='pomo')setPh(T.ph);toast('Pomodoro salvo')};
+F.cp1=v=>{const p=gp();p.pomo[1]=Math.max(1,parseInt(v)||5);sp(p);applyP();if(!T.run&&T.mode==='pomo')setPh(T.ph);toast('Pomodoro salvo')};
+const sg=(k,v)=>{const g=getGoals();g[k]=Math.max(0,parseInt(v)||0);setGoals(g);toast('Metas padrão salvas')};
+F.cg0=v=>sg('minutes',v);F.cg1=v=>sg('sessions',v);F.cg2=v=>sg('deliveries',v);
+A.cnot=async()=>{const p=gp();if(p.notif){p.notif=false;sp(p);return settings()}if(!('Notification' in window))return toast('Seu navegador não suporta notificações');try{p.notif=(await Notification.requestPermission())==='granted'}catch(e){p.notif=false}sp(p);toast(p.notif?'Notificações ativadas':'Permissão negada');settings()};
+A.pdet=async id=>{const [pr,tk,se]=await Promise.all([all('projects'),all('tasks'),all('sessions')]),p=pr.find(x=>x.id===id);if(!p)return;const t=tk.filter(x=>x.projectId===id),d=t.filter(x=>x.status==='concluida').length,mins=Math.round(se.filter(s=>s.projectId===id).reduce((a,s)=>a+(s.minutes||0),0));V.innerHTML=TOP+`<button class='btn mini' data-a='pback'>← Projetos</button><h1 style='margin-top:12px'>${esc(p.name)}</h1><div class='sub'>${ST[p.status]} · prioridade ${PR[p.prio]}${p.due?' · prazo '+p.due:''}</div><div class='card' style='margin-bottom:12px'>${esc(p.desc)||'Sem descrição'}<div class='bar' style='margin-top:12px'><b style='width:${t.length?Math.round(d/t.length*100):0}%'></b></div><div class='lbl' style='margin-top:6px'>${d}/${t.length} tarefas · ${mins} min de foco</div></div><div class='card' style='padding-top:6px'>${t.length?t.map(x=>`<div class='item'><span style='${x.status==='concluida'?'text-decoration:line-through;color:var(--tx2)':''}'>${esc(x.title)}</span><span class='tag'>${TS[x.status]}</span></div>`).join(''):empty('task','Este projeto ainda não tem tarefas.')}</div>`};
+A.pback=()=>projects();
+async function settings(){const p=gp(),g=getGoals();V.innerHTML=TOP+`<h1>Configurações</h1><div class='sub'>Preferências, dados e backup</div><div class='card' style='margin-bottom:12px'><h3>Preferências</h3><div class='gform'><label>Tema<select data-f='ct'><option value='dark' ${p.theme==='dark'?'selected':''}>Escuro</option><option value='light' ${p.theme==='light'?'selected':''}>Claro</option></select></label><label>Pomodoro: foco (min)<input type='number' min='1' data-f='cp0' value='${p.pomo[0]}'></label><label>Pomodoro: descanso (min)<input type='number' min='1' data-f='cp1' value='${p.pomo[1]}'></label><label>Meta padrão: minutos/semana<input type='number' min='0' data-f='cg0' value='${g.minutes}'></label><label>Meta padrão: sessões/semana<input type='number' min='0' data-f='cg1' value='${g.sessions}'></label><label>Meta padrão: entregas/semana<input type='number' min='0' data-f='cg2' value='${g.deliveries}'></label><label>Notificações ao fim das sessões<button class='btn mini' data-a='cnot'>${p.notif?'Ativadas':'Desativadas'}</button></label></div></div><div class="card" style="margin-bottom:12px"><h3>Backup</h3><div class="row" style="justify-content:flex-start;margin-bottom:10px"><button class="btn" data-a="bexp">Gerar backup (JSON)</button><button class="btn" data-a="bimp">Importar do texto</button></div><textarea class="bk" id="bk" placeholder="O backup aparece aqui. Para importar, cole um JSON de backup neste campo."></textarea></div><div class="card"><h3>Zona de risco</h3><button class="btn" data-a="bclr">Limpar todos os dados</button></div>`}
+A.bexp=async()=>{const o={app:"workspace",v:1,goals:getGoals()};for(const s of STORES)o[s]=await all(s);const t=document.getElementById("bk");t.value=JSON.stringify(o,null,1);t.select();try{await navigator.clipboard.writeText(t.value);toast("Backup copiado")}catch(e){toast("Backup gerado: copie o texto")}};
+A.bimp=()=>{let o;try{o=JSON.parse(document.getElementById("bk").value)}catch(e){return toast("JSON inválido")}if(!o||o.app!=="workspace"||STORES.some(s=>!Array.isArray(o[s])||o[s].some(x=>!x||typeof x.id!=="string")))return toast("Arquivo não é um backup válido");ask("Importar substitui todos os dados atuais. Continuar?",async()=>{for(const s of STORES){await clr(s);for(const x of o[s])await put(s,x)}if(o.goals)setGoals({...DG,...o.goals});toast("Backup importado")})};
+A.bclr=()=>ask("Apagar TODOS os dados permanentemente?",async()=>{for(const s of STORES)await clr(s);try{localStorage.removeItem("ws_goals")}catch(e){}toast("Dados apagados")});
+/* METAS E HÁBITOS */
+const ds=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),back=n=>{const d=new Date();d.setDate(d.getDate()-n);return ds(d)};
+const streak=l=>{let i=l.includes(back(0))?0:1,n=0;while(l.includes(back(i))){n++;i++}return n};
+const inWk=(l,o)=>{const s=weekStart();s.setDate(s.getDate()-7*o);const a=ds(s);s.setDate(s.getDate()+6);const b=ds(s);return l.filter(x=>x>=a&&x<=b).length};
+async function habits(){
+ const [h,se]=await Promise.all([all('habits'),all('sessions')]),ws=weekStart().getTime(),mw=o=>Math.round(se.filter(s=>s.startedAt>=ws-o*6048e5&&s.startedAt<ws-o*6048e5+6048e5).reduce((a,s)=>a+(s.minutes||0),0)),hw=o=>h.reduce((n,x)=>n+inWk(x.log,o),0);
+ V.innerHTML=TOP+`<h1>Metas e hábitos</h1><div class='sub'>Acompanhe sua consistência</div><div class='grid stats'><div class='card'><div class='big'>${mw(0)}</div><div class='lbl'>Min de foco nesta semana (${mw(1)} na anterior)</div></div><div class='card'><div class='big'>${hw(0)}</div><div class='lbl'>Registros de hábitos nesta semana (${hw(1)} na anterior)</div></div></div><div class='row' style='margin:14px 0'><b>Seus hábitos e metas</b><button class='btn p' data-a='hnew'>Novo</button></div>`+(h.length?`<div class='grid'>${h.map(x=>{const t=x.kind==='daily'?7:x.target||1,w=inWk(x.log,0),dn=x.log.includes(back(0));return `<div class='card'><div class='row'><b>${esc(x.name)}</b><span class='tag'>${x.kind==='daily'?'Diário':'Meta semanal'}</span></div><div class='lbl' style='margin:6px 0 8px'>${w}/${t} nesta semana · ${streak(x.log)} dias seguidos</div><div class='bar'><b style='width:${Math.min(100,Math.round(w/t*100))}%'></b></div><div class='row' style='margin-top:10px'><span style='display:flex;gap:3px'>${Array.from({length:14},(_,i)=>back(13-i)).map(d=>`<button data-a='hday' data-id='${x.id}' data-d='${d}' title='${d}' style='width:14px;height:14px;border-radius:3px;border:1px solid var(--bd);padding:0;cursor:pointer;background:${x.log.includes(d)?'var(--ac)':'var(--sec)'}'></button>`).join('')}</span><span><button class='btn mini ${dn?'':'p'}' data-a='hchk' data-id='${x.id}'>${dn?'Feito hoje':'Marcar hoje'}</button> <button class='btn mini' data-a='hedit' data-id='${x.id}'>Editar</button> <button class='btn mini' data-a='hdel' data-id='${x.id}'>×</button></span></div></div>`}).join('')}</div>`:empty('goal','Nenhum hábito ainda. Crie o primeiro, por exemplo: editar por 1 hora.'));
+}
+const hform=x=>modal('Hábito ou meta',[['name','Nome','text'],['kind','Tipo','select',[['daily','Hábito diário'],['weekly','Meta semanal']]],['target','Vezes por semana (meta semanal)','number']],{kind:'daily',...x},async d=>{await put('habits',{...x,name:d.name,kind:d.kind,target:Math.max(1,Math.min(7,+d.target||1)),id:x.id||uid(),log:x.log||[],created:x.created||Date.now()});toast('Salvo');habits()});
+A.hnew=()=>hform({});A.hedit=async id=>hform((await all('habits')).find(y=>y.id===id)||{});
+A.hday=async(id,b)=>{const x=(await all('habits')).find(y=>y.id===id),d=b.dataset.d;x.log=x.log.includes(d)?x.log.filter(y=>y!==d):[...x.log,d];await put('habits',x);habits()};
+A.hchk=id=>A.hday(id,{dataset:{d:back(0)}});
+A.hdel=id=>ask('Excluir este hábito e todo o histórico dele?',async()=>{await del('habits',id);toast('Hábito excluído');habits()});
+/* BIBLIOTECA */
+const CATS={ideias:'Ideias',notas:'Anotações',refs:'Referências',links:'Links',recursos:'Recursos',insp:'Inspirações'};let lf={c:''};
+async function library(){
+ const n=await all('notes'),l=n.filter(x=>!lf.c||x.cat===lf.c).sort((a,b)=>b.updated-a.updated);
+ V.innerHTML=TOP+`<h1>Biblioteca</h1><div class='sub'>${n.length} itens</div><div class='row' style='margin-bottom:14px'><div class='row'>${sel('lc',CATS,lf.c,'Todas as categorias')}<input id='qs' placeholder='Pesquisar...' style='background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px;color:var(--tx);font:inherit'></div><button class='btn p' data-a='lnew'>Nova nota</button></div>`+(l.length?`<div class='grid'>${l.map(x=>`<div class='card' data-q='${esc((x.title+' '+x.body+' '+x.tags.join(' ')).toLowerCase())}'><div class='row'><b>${esc(x.title)}</b><span class='tag'>${CATS[x.cat]}</span></div><div class='lbl' style='margin:8px 0;white-space:pre-wrap'>${esc(x.body)}</div><div class='row'><span>${x.tags.map(t=>`<span class='tag'>#${esc(t)}</span>`).join(' ')}</span><span><button class='btn mini' data-a='ledit' data-id='${x.id}'>Editar</button> <button class='btn mini' data-a='ldel' data-id='${x.id}'>×</button></span></div></div>`).join('')}</div>`:empty('lib',n.length?'Nada nesta categoria.':'Biblioteca vazia. Guarde ideias, links e referências aqui.'));
+}
+V.addEventListener('input',e=>{if(e.target.id==='qs'){const q=e.target.value.toLowerCase();V.querySelectorAll('[data-q]').forEach(c=>c.style.display=c.dataset.q.includes(q)?'':'none')}});
+F.lc=v=>{lf.c=v;library()};
+const lform=x=>modal('Nota',[['title','Título','text'],['cat','Categoria','select',opts(CATS)],['body','Conteúdo','area'],['tags','Tags (separadas por vírgula)','text']],{cat:'ideias',...x,tags:(x.tags||[]).join(', ')},async d=>{await put('notes',{id:x.id||uid(),title:d.title,cat:d.cat,body:d.body,tags:d.tags.split(',').map(t=>t.trim()).filter(Boolean),created:x.created||Date.now(),updated:Date.now()});toast('Nota salva');library()});
+A.lnew=()=>lform({});A.ledit=async id=>lform((await all('notes')).find(y=>y.id===id)||{});
+A.ldel=id=>ask('Excluir esta nota?',async()=>{await del('notes',id);toast('Nota excluída');library()});
+/* ANTI-PROCRASTINAÇÃO */
+const Q={run:0,end:0,start:0},U={},UB=[['start','Não sei por onde começar'],['big','É grande demais'],['boring','Está chato'],['perf','Medo de ficar ruim'],['dist','Me distraio fácil']];
+const UN={start:x=>`Abrir o material de “${x}” e listar 3 passos`,big:x=>`Definir o resultado de “${x}” em 1 frase e fazer só a primeira parte (25 min)`,boring:x=>`Trabalhar 5 min em “${x}” com música ou café e depois decidir se continua`,perf:x=>`Fazer um rascunho de “${x}” em 5 min, sem revisar`,dist:x=>`Silenciar o celular, fechar abas e trabalhar 15 min só em “${x}”`};
+const TEC=[['Regra dos cinco minutos','Comece e trabalhe por apenas 5 minutos. Depois decida se para. Começar é a parte mais difícil.'],['Decomposição de tarefas','Transforme algo grande em ações pequenas, concretas e com começo claro.'],['Regra dos dois minutos','Se leva menos de 2 minutos, faça agora em vez de adiar.'],['Intenção de implementação','Defina quando, onde e como: “Quando eu terminar o café, na mesa, abro o editor.”'],['Redução de atrito','Deixe tudo pronto antes: arquivos abertos, fones por perto, celular longe.'],['Trabalho monotarefa','Uma coisa por vez. Alternar entre atividades custa foco a cada troca.']];
+function zap(){
+ V.innerHTML=TOP+`<h1>Anti-procrastinação</h1><div class='sub'>Comece pequeno</div><div class='grid two' style='margin-bottom:12px'><div class='card'><h3>Início rápido de 5 minutos</h3><div class='big' id='q5' style='text-align:center;margin:14px 0'>${Q.run?fmt(Math.max(0,Math.round((Q.end-Date.now())/1000))):'05:00'}</div><div class='row' style='justify-content:center'>${Q.run?`<button class='btn' data-a='q5x'>Cancelar</button>`:`<button class='btn p' data-a='q5'>Começar 5 minutos</button>`}</div></div><div class='card'><h3>Destravar tarefa</h3><div class='gform'><label class='f'>O que você está adiando?<input id='ux'></label><label class='f'>O que trava você?<select id='ub'>${UB.map(([k,v])=>`<option value='${k}'>${v}</option>`).join('')}</select></label><button class='btn p' data-a='ud'>Destravar</button><div id='ur'></div></div></div></div><div class='grid' style='grid-template-columns:repeat(auto-fit,minmax(240px,1fr))'>${TEC.map(([t,d])=>`<div class='card'><b>${t}</b><div class='lbl' style='margin-top:6px'>${d}</div></div>`).join('')}</div>`;
+}
+A.q5=()=>{Q.start=Date.now();Q.end=Q.start+3e5;Q.run=1;zap()};A.q5x=()=>{Q.run=0;zap()};
+setInterval(()=>{if(!Q.run)return;const s=Math.max(0,Math.round((Q.end-Date.now())/1000));if(s<=0){Q.run=0;put('sessions',{id:uid(),startedAt:Q.start,minutes:5,completed:true,mode:'q5',projectId:null,taskId:null});toast('5 minutos concluídos! Que tal continuar?');if(location.hash==='#zap')zap();return}const e=document.getElementById('q5');if(e)e.textContent=fmt(s)},300);
+A.ud=()=>{const x=document.getElementById('ux').value.trim();if(!x)return toast('Escreva o que você está adiando');U.act=UN[document.getElementById('ub').value](x);document.getElementById('ur').innerHTML=`<div class='card' style='background:var(--sec)'><div class='lbl'>Sua ação mínima</div><div style='margin:6px 0 10px'>${esc(U.act)}</div><div class='row' style='justify-content:flex-start'><button class='btn mini p' data-a='q5'>Iniciar 5 min</button><button class='btn mini' data-a='ut'>Salvar como tarefa</button></div></div>`};
+A.ut=async()=>{await put('tasks',{id:uid(),title:U.act,desc:'',projectId:'',prio:'media',due:'',status:'a_fazer',est:5,spent:0,created:Date.now()});toast('Tarefa criada')};
+const VIEWS={dash:dashboard,proj:projects,task:tasks,focus,goal:habits,lib:library,zap,cfg:settings};
+async function route(){const h=nav();document.getElementById("side").classList.remove("open");const f=VIEWS[h];if(f)await f();else stub(NAV.some(x=>x[0]===h)?h:"dash")}
+window.addEventListener("hashchange",route);
+openDB().then(()=>{applyP();if(!T.run)setPh(T.ph);route()});
+</script>
+</body>
+</html>
